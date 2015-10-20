@@ -99,14 +99,13 @@ void encrypt() {
 	i=0;
 	while(i<=len) {
 		ptxt=m[i];
-		ptxt=ptxt-42;
 		k=1;
 		for(j=0;j<key;j++) {
 			k=k*ptxt;
 			k=k%x;
 		}
 		temp[i]=k;
-		ctxt=k+42;
+		ctxt=k;
 		c[i]=ctxt;
 		i++;
 	}
@@ -126,7 +125,7 @@ void decrypt() {
 			k=k*ctxt;
 			k=k%x;
 		}
-		ptxt=k+42;
+		ptxt=k;
 		m[i]=ptxt;
 		i++;
 	}
